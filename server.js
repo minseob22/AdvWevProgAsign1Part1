@@ -36,6 +36,16 @@ const serveFile = async (filePath, contentType, response) => {
 
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
+
+    
+    if (req.url === '/') {
+        console.log("Han min seob");
+    }
+    if (req.url === '/new-page.html') {
+        console.log("Han min seob");
+    }
+    
+    
     myEmitter.emit('log', `${req.url}\t${req.method}`, 'reqLog.txt');
 
     const extension = path.extname(req.url);
